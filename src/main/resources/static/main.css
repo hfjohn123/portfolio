@@ -1,0 +1,159 @@
+body {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+html, body {
+    height: -webkit-fill-available;
+}
+
+.main {
+    min-height: 100%;
+    padding-top: 74px;
+}
+
+#welcome {
+    background-color: #444444;
+    color: white;
+
+}
+
+#code {
+    margin-left: 10px;
+    font-size: 4vmin;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%); /* 50%为自身尺寸的一半 */
+    -webkit-transform: translate(0, -50%);
+}
+
+#world {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* 50%为自身尺寸的一半 */
+    -webkit-transform: translate(-50%, -50%);
+    font-size: 10vmin;
+    white-space: nowrap;
+}
+
+.next {
+    position: absolute;
+    width: 40vmin;
+    height: 20vmin;
+    bottom: -2vh;
+    left: 50%;
+    margin-left: -20vmin;
+    text-decoration: none;
+    color:#79a3b1;
+    opacity: 50%;
+}
+.next:hover{
+    opacity: 80%;
+}
+
+.nav-item {
+    height: 74px;
+    padding: 0;
+    line-height: 3.5;
+    min-width: 100px;
+}
+
+.navbar {
+    padding: 0;
+}
+
+
+nav .active {
+    background-color: #79a3b1 !important;
+    font-weight: bold !important;
+}
+
+#welcome a {
+    text-decoration: none;
+    color: white;
+}
+
+.selective {
+    user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -webkit-user-select: text;
+    font-size: 4vmin;
+    display: none;
+}
+
+.photo {
+    width: 40vmax;
+    display: none;
+}
+
+.info {
+    width: 10%;
+}
+
+.info:hover {
+    fill: #79a3b1;
+}
+
+.info path {
+    opacity: 0.7;
+}
+
+.dropdown-menu{
+    background-color: #d0e8f2;
+}
+.dropdown-item:hover{
+    background-color: transparent !important;
+}
+a.dropdown-item.active{
+    color: rgba(0,0,0,.9);
+}
+@media screen and (max-height: 540px){
+    .next{
+        display: none;
+    }
+
+}
+.proj1{
+    display: none;
+}
+.proj2{
+    display: none;
+}
+.proj3{
+    display: none;
+}
+.LinkNotShow{
+    text-decoration: none;
+    color: black;
+}
+a.wechat {
+    position: relative;
+}
+
+.wechat img.qrcode {
+    position: absolute;
+    z-index: 99;
+    top: -135px;
+    right: -28px;
+    width: 7.5rem;
+    max-width: none;
+    height: 7.5rem;
+    transform: scale(0);
+    transform-origin: top right;
+    opacity: 0;
+    border: .3125rem solid #79a3b1;
+    border-radius: .25rem;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+
+}
+
+.wechat:hover img.qrcode {
+    transform: scale(1);
+    opacity: 1;
+}
