@@ -50,9 +50,6 @@ html, body {
     color:#79a3b1;
     opacity: 50%;
 }
-.next:hover{
-    opacity: 80%;
-}
 
 .nav-item {
     height: 74px;
@@ -93,11 +90,6 @@ nav .active {
 .info {
     width: 10%;
 }
-
-.info:hover {
-    fill: #79a3b1;
-}
-
 .info path {
     opacity: 0.7;
 }
@@ -130,6 +122,9 @@ a.dropdown-item.active{
     text-decoration: none;
     color: black;
 }
+.LinkNotShow:hover{
+    color: #79a3b1;
+}
 a.wechat {
     position: relative;
 }
@@ -156,4 +151,35 @@ a.wechat {
 .wechat:hover img.qrcode {
     transform: scale(1);
     opacity: 1;
+    opacity: 1;
+}
+/* Container needed to position the overlay. Adjust the width as needed */
+.info-svg {
+    position: relative;
+    width: 10%;
+    max-width: 300px;
+    display: inline-block;
+}
+.info-svg .info{
+    width: 100%;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.info-svg:hover .overlay {
+    opacity: 1;
+}
+.info-svg:hover .info {
+    fill: #79a3b1;
 }

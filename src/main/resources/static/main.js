@@ -42,13 +42,13 @@ $(document).ready(function () {
                     $(".selective").show().addClass("animate__animated animate__fadeInRightBig");
                 } else if (destination.anchor == 'thirdPage') {
                         $(".proj1").show(1000);
-                    } else if (destination.anchor == 'fourthPage') {
+                } else if (destination.anchor == 'fourthPage') {
                         $("#photo2").show().addClass("animate__animated animate__backInRight");
                         $(".proj2").show().addClass("animate__animated animate__backInLeft");
-                    } else {
+                } else if (destination.anchor == 'lastPage'|| destination.anchor =='footer'){
                         $("#photo3").show().addClass("animate__animated animate__zoomIn");
                         $(".proj3").show().addClass("animate__animated animate__zoomIn");
-                    }
+                }
             }else{
                 $("#photo1").show();
                 $(".selective").show();
