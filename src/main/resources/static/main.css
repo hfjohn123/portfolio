@@ -79,7 +79,6 @@ nav .active {
     -ms-user-select: text;
     -webkit-user-select: text;
     font-size: 4vmin;
-    display: none;
 }
 
 .photo {
@@ -116,6 +115,9 @@ a.dropdown-item.active{
     display: none;
 }
 .proj3{
+    display: none;
+}
+#intro{
     display: none;
 }
 .LinkNotShow{
@@ -183,4 +185,12 @@ a.wechat {
 }
 .info-svg:hover .info {
     fill: #79a3b1;
+}
+
+#graph {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding-top: 74px;
+    display: none;
 }

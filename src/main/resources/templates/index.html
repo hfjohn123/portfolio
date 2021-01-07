@@ -18,8 +18,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
     <link href="fullpage.css" rel="stylesheet">
     <script src="fullpage.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/wordcloud.js"></script>
     <link href="main.css" rel="stylesheet">
     <script src="main.js"></script>
+
+
 </head>
 
 <body style="background-color: #fcf8ec;">
@@ -35,11 +39,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="myMenu">
-                <li class="nav-item active " data-menuanchor="firstPage">
-                    <a class="nav-link" href="#firstPage" th:text="#{index.nav1}">Welcome</a>
+                <li class="nav-item active " data-menuanchor="welcome">
+                    <a class="nav-link" href="#welcome" th:text="#{index.nav1}">Welcome</a>
                 </li>
-                <li class="nav-item" data-menuanchor="secondPage">
-                    <a class="nav-link" href="#secondPage" th:text="#{index.nav2}">Info</a>
+                <li class="nav-item" data-menuanchor="info">
+                    <a class="nav-link" href="#info" th:text="#{index.nav2}">Info</a>
+                </li>
+                <li class="nav-item" data-menuanchor="skill">
+                    <a class="nav-link" href="#skill" th:text="#{index.nav7}">Info</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
@@ -47,12 +54,12 @@
                         Dropdown
                     </a>
                     <ul aria-labelledby="navbarDropdown" class="dropdown-menu" id="dropdownmenu">
-                        <li><a class="dropdown-item" data-menuanchor="thirdPage" href="#thirdPage"
+                        <li><a class="dropdown-item" data-menuanchor="this" href="#this"
                                th:text="#{index.nav4}">This Website</a></li>
-                        <li><a class="dropdown-item" data-menuanchor="fourthPage" href="#fourthPage"
+                        <li><a class="dropdown-item" data-menuanchor="rurl" href="#rurl"
                                th:text="#{index.nav5}">Rurl</a>
                         </li>
-                        <li><a class="dropdown-item" data-menuanchor="lastPage" href="#lastPage"
+                        <li><a class="dropdown-item" data-menuanchor="vgg" href="#vgg"
                                th:text="#{index.nav6}">VGG NN Research</a>
                         </li>
                     </ul>
@@ -92,7 +99,7 @@
             <div class="col-lg-5">
                 <img alt="Oops, photo not loaded." class="img-fluid photo" id="photo1" src="photo1.jpg">
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7" id="intro">
                 <p class="selective">
                     <b th:text="#{index.title}">Qi Song</b>
                     <br>E-mail:<a>hfjohn123@live.com</a>
@@ -158,6 +165,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="section">
+        <div id="graph"></div>
     </div>
     <div class="section">
         <div class="container-fluid row align-items-center">
