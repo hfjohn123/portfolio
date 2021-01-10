@@ -122,6 +122,7 @@ $(document).ready(function () {
         anchors: ['welcome', 'info', 'skill', 'this', 'rurl','vgg','footer'],
         menu: '#myMenu',
         responsiveHeight: 570,
+        responsiveWidth: 369,
         restartOnPushState: false,
         restartOnRequestAfter: false,
         afterLoad: function(origin, destination, direction){
@@ -130,7 +131,7 @@ $(document).ready(function () {
                 $("#navbarDropdown").addClass("active");
             }
             //using anchorLink
-            if(window.innerHeight >570) {
+            if(window.innerHeight >570 && window.innerWidth>369) {
                 if (destination.anchor == 'info') {
                     $("#photo1").show().addClass("animate__animated animate__fadeInLeftBig");
                     $("#intro").show().addClass("animate__animated animate__fadeInRightBig");
@@ -147,7 +148,8 @@ $(document).ready(function () {
                 }
             }else{
                 $("#photo1").show();
-                $(".selective").show();
+                $("#graph").show();
+                $("#intro").show();
                 $(".proj1").show();
                 $("#photo2").show();
                 $(".proj2").show();
