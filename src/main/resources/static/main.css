@@ -194,3 +194,12 @@ a.wechat {
     padding-top: 74px;
     display: none;
 }
+@media only screen and (max-width: 991px) {
+    #graph {
+        padding-top: 58px;
+    }
+
+    .main {
+        padding-top: 58px;
+    }
+}

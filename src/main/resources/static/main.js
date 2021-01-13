@@ -1,5 +1,6 @@
 paceOptions = {
     restartOnPushState: false,
+    eventLag: false
 }
 $(document).scroll(function (){
     if (fullpage_api.getActiveSection().anchor== 'this'  || fullpage_api.getActiveSection().anchor == 'rurl' || fullpage_api.getActiveSection().anchor == 'vgg'||fullpage_api.getActiveSection().anchor == 'footer') {
