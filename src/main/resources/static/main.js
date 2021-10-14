@@ -3,10 +3,12 @@ paceOptions = {
     eventLag: false
 }
 $(document).scroll(function (){
-    if (fullpage_api.getActiveSection().anchor== 'this'  || fullpage_api.getActiveSection().anchor == 'rurl' || fullpage_api.getActiveSection().anchor == 'vgg'||fullpage_api.getActiveSection().anchor == 'footer') {
+    $(".collapse").collapse('hide');
+    if (fullpage_api.getActiveSection().anchor=== 'this'  || fullpage_api.getActiveSection().anchor === 'rurl' || fullpage_api.getActiveSection().anchor === 'vgg'||fullpage_api.getActiveSection().anchor === 'footer') {
         $("#navbarDropdown").addClass("active");
     }
 });
+
 $(document).ready(function () {
     var data= [{
         name: 'Java',
@@ -122,28 +124,31 @@ $(document).ready(function () {
         autoScrolling: true,
         anchors: ['welcome', 'info', 'skill', 'this', 'rurl','vgg','footer'],
         menu: '#myMenu',
-        responsiveHeight: 570,
-        responsiveWidth: 369,
+        responsiveHeight: 568,
+        responsiveWidth: 320,
         restartOnPushState: false,
         restartOnRequestAfter: false,
+        onLeave:function(origin, destination, direction){
+            $(".collapse").collapse('hide');
+        },
         afterLoad: function(origin, destination, direction){
             var loadedSection = this;
-            if (fullpage_api.getActiveSection().anchor== 'this'  || fullpage_api.getActiveSection().anchor == 'rurl' || fullpage_api.getActiveSection().anchor == 'vgg'|| fullpage_api.getActiveSection().anchor == 'footer') {
+            if (fullpage_api.getActiveSection().anchor=== 'this'  || fullpage_api.getActiveSection().anchor === 'rurl' || fullpage_api.getActiveSection().anchor === 'vgg'|| fullpage_api.getActiveSection().anchor == 'footer') {
                 $("#navbarDropdown").addClass("active");
             }
             //using anchorLink
-            if(window.innerHeight >570 && window.innerWidth>369) {
-                if (destination.anchor == 'info') {
+            if(window.innerHeight >568 && window.innerWidth>320) {
+                if (destination.anchor === 'info') {
                     $("#photo1").show().addClass("animate__animated animate__fadeInLeftBig");
                     $("#intro").show().addClass("animate__animated animate__fadeInRightBig");
-                }else if(destination.anchor == 'skill'){
+                }else if(destination.anchor === 'skill'){
                     $("#graph").fadeIn(1000);
-                } else if (destination.anchor == 'this') {
+                } else if (destination.anchor === 'this') {
                         $(".proj1").show(1000);
-                } else if (destination.anchor == 'rurl') {
+                } else if (destination.anchor === 'rurl') {
                         $("#photo2").show().addClass("animate__animated animate__backInRight");
                         $(".proj2").show().addClass("animate__animated animate__backInLeft");
-                } else if (destination.anchor == 'vgg'|| destination.anchor =='footer'){
+                } else if (destination.anchor === 'vgg'|| destination.anchor ==='footer'){
                         $("#photo3").show().addClass("animate__animated animate__zoomIn");
                         $(".proj3").show().addClass("animate__animated animate__zoomIn");
                 }
@@ -159,4 +164,5 @@ $(document).ready(function () {
             }
         },
         });
+
 });

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <title th:text="#{index.title}">Title</title>
+    <title>Qi Song</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/ico"/>
     <script src="jquery-3.5.1.min.js"></script>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
@@ -33,7 +33,7 @@
             <img alt="Qi " src="favicon.ico">
             <b>Song</b></a>
         <button aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
-                class="navbar-toggler"
+                class="navbar-toggler" id = "toggler"
                 data-bs-target="#navbarTogglerDemo02" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,7 +51,7 @@
                 <li class="nav-item dropdown">
                     <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
                        id="navbarDropdown" role="button" th:text="#{index.nav3}">
-                        Dropdown
+                        Project
                     </a>
                     <ul aria-labelledby="navbarDropdown" class="dropdown-menu" id="dropdownmenu">
                         <li><a class="dropdown-item" data-menuanchor="this" href="#this"
@@ -76,7 +76,7 @@
 </nav>
 <div id="fullpage">
     <div class="section">
-        <div class="container-fluid main" id="welcome">
+        <div class="container-fluid main" id="welcome_i">
             <span id="code"></span>
             <h1 class="display_1" id="world" th:text="#{index.welcome}">Hello, World!</h1>
         </div>
@@ -103,9 +103,10 @@
                 <p class="selective">
                     <b th:text="#{index.title}">Qi Song</b>
                     <br>E-mail:<a>hfjohn123@live.com</a>
-                    <br>Tel: +86-18521032318
+                    <br>Tel: +1-(949)414-7432
                     <br>
-                    <br><span th:text="#{index.intro}"></span>
+                    <br><span th:text="#{index.intro}">Graduate from Rutgers University in 2020 with a BS Computer Science degree, now is actively looking an opportunity of graduate study.
+</span>
                     <br><br>
                 </p>
                 <div class="info-svg">
@@ -264,7 +265,7 @@
     <h2>Rurl—— Short Url Generator</h2>
     This website is a short url generator that transforms your long url into a short one so you can share it with others more easily.
     <br>And as an example, this Demo is collecting UA (user agent) info from the request. This is an example for how could a website like this benefits the business.
-    <br>MVC and HTTP Server by SpringBoot. Spring Data as ORM and MongoDB for data Storage. Design and function based on Restful.
+    <br>MVC and HTTP Server by SpringBoot. Spring Data as ORM and MongoDB for data Storage. Design and function based on Restful API.
     <br>Click the image to get to the Demo. you can achieve the source code through the navbar of the demo site.
     <br>
 </span>
@@ -272,7 +273,7 @@
  <h2>Rurl—— 短链接生成器</h2>
     这个网站是个短链接生成器，可以把长链接转换成短链接，这样用户可以更简单的把它分享给其他人。
     <br>这里是一个例子，这个Demo会从Request中收集UA (user agent)信息，这是这个网站的运行者获益的一种方式。
-    <br>SpringBoot的MVC和HTTP服务器。Spring Data作为ORM，MongoDB用来存储数据。基于Restful设计和工作。
+    <br>SpringBoot的MVC和HTTP服务器。Spring Data作为ORM，MongoDB用来存储数据。基于Restful API设计和工作。
     <br>点击图片跳转到Demo。如果你想要查看源代码。你可以从Demo的Navbar里边的超链接找到对应的GitHub。
     <br>
                 </span>

@@ -14,7 +14,7 @@ html, body {
     padding-top: 74px;
 }
 
-#welcome {
+#welcome_i {
     background-color: #444444;
     color: white;
 
@@ -68,7 +68,7 @@ nav .active {
     font-weight: bold !important;
 }
 
-#welcome a {
+#welcome_i a {
     text-decoration: none;
     color: white;
 }
