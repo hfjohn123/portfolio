@@ -1,30 +1,40 @@
+// Get the current year
+const d = new Date();
+let year = d.getFullYear();
+
+// Pace.js config
 paceOptions = {
     restartOnPushState: false,
     eventLag: false
 }
+
+// Navbar active
 $(document).scroll(function (){
     $(".collapse").collapse('hide');
-    if (fullpage_api.getActiveSection().anchor=== 'this'  || fullpage_api.getActiveSection().anchor === 'rurl' || fullpage_api.getActiveSection().anchor === 'vgg'||fullpage_api.getActiveSection().anchor === 'footer') {
+    if (fullpage_api.getActiveSection().anchor=== 'this'  || fullpage_api.getActiveSection().anchor === 'kinship'|| fullpage_api.getActiveSection().anchor === 'rurl' || fullpage_api.getActiveSection().anchor === 'vgg'||fullpage_api.getActiveSection().anchor === 'footer') {
         $("#navbarDropdown").addClass("active");
     }
 });
 
+// main
 $(document).ready(function () {
+
+    // Highcharts Config
     var data= [{
         name: 'Java',
-        weight: 5,
+        weight: year-2016,
     }, {
         name: 'Python',
-        weight: 2,
+        weight: year-2018,
     }, {
         name: 'C',
-        weight: 1,
+        weight: year-2019,
     },{
         name: 'Prolog',
         weight: 1,
     },{
         name: 'JavsScript',
-        weight: 3,
+        weight: year-2018,
     },{
         name: 'Haskell',
         weight: 1,
@@ -33,25 +43,25 @@ $(document).ready(function () {
         weight: 5,
     },{
         name: 'HTML',
-        weight: 5,
+        weight: year-2016,
     },{
         name: 'CSS',
-        weight: 3,
+        weight: year-2018,
     },{
         name: 'UiPath',
         weight: 1,
     },{
         name: 'Spring',
-        weight: 2,
+        weight: year-2019,
     },{
         name: 'Bootstrap',
-        weight: 2,
+        weight: year-2019,
     },{
         name: 'React',
         weight: 1,
     },{
         name: 'jQuery',
-        weight: 3,
+        weight: year-2018,
     },{
         name: 'Maven',
         weight: 1,
@@ -66,13 +76,13 @@ $(document).ready(function () {
         weight: 1,
     },{
         name: 'Tensorflow',
-        weight: 2,
+        weight: year-2019,
     },{
-        name: 'Keras',
-        weight: 2,
+        name: 'Pytorch',
+        weight: year-2020,
     },{
         name: 'Pandas',
-        weight: 2,
+        weight: year-2019,
     },{
         name: 'Altair',
         weight: 1,
@@ -80,11 +90,11 @@ $(document).ready(function () {
         name: 'Git',
         weight: 2,
     },{
-        name: 'MySQL',
-        weight: 3,
+        name: 'SQL',
+        weight: year-2018,
     },{
-        name: 'MongoDB',
-        weight: 1,
+        name: 'NoSQL',
+        weight: year-2019,
     }]
     Highcharts.chart('graph', {
         series: [{
@@ -104,6 +114,8 @@ $(document).ready(function () {
             }
         },
     });
+
+    // Welcome page animation
     $("#world").hide();
     $(function () {
         $({blurRadius: 0}).delay(2500).animate({blurRadius: 5}, {
@@ -119,10 +131,12 @@ $(document).ready(function () {
             }
         });
     });
+
+    // fullpage.js config
     $('#fullpage').fullpage({
         //options here
         autoScrolling: true,
-        anchors: ['welcome', 'info', 'skill', 'this', 'rurl','vgg','footer'],
+        anchors: ['welcome', 'info', 'skill', 'this','kinship', 'rurl','vgg','footer'],
         menu: '#myMenu',
         responsiveHeight: 568,
         responsiveWidth: 320,
@@ -133,7 +147,7 @@ $(document).ready(function () {
         },
         afterLoad: function(origin, destination, direction){
             var loadedSection = this;
-            if (fullpage_api.getActiveSection().anchor=== 'this'  || fullpage_api.getActiveSection().anchor === 'rurl' || fullpage_api.getActiveSection().anchor === 'vgg'|| fullpage_api.getActiveSection().anchor == 'footer') {
+            if (fullpage_api.getActiveSection().anchor=== 'this'  || fullpage_api.getActiveSection().anchor=== 'kinship'  || fullpage_api.getActiveSection().anchor === 'rurl' || fullpage_api.getActiveSection().anchor === 'vgg'|| fullpage_api.getActiveSection().anchor === 'footer') {
                 $("#navbarDropdown").addClass("active");
             }
             //using anchorLink
@@ -145,12 +159,15 @@ $(document).ready(function () {
                     $("#graph").fadeIn(1000);
                 } else if (destination.anchor === 'this') {
                         $(".proj1").show(1000);
-                } else if (destination.anchor === 'rurl') {
-                        $("#photo2").show().addClass("animate__animated animate__backInRight");
-                        $(".proj2").show().addClass("animate__animated animate__backInLeft");
+                } else if (destination.anchor === 'kinship') {
+                    $("#photo2").show().addClass("animate__animated animate__zoomIn");
+                    $(".proj2").show().addClass("animate__animated animate__zoomIn");
+                }else if (destination.anchor === 'rurl') {
+                        $("#photo3").show().addClass("animate__animated animate__backInRight");
+                        $(".proj3").show().addClass("animate__animated animate__backInLeft");
                 } else if (destination.anchor === 'vgg'|| destination.anchor ==='footer'){
-                        $("#photo3").show().addClass("animate__animated animate__zoomIn");
-                        $(".proj3").show().addClass("animate__animated animate__zoomIn");
+                        $("#photo4").show().addClass("animate__animated animate__zoomIn");
+                        $(".proj4").show().addClass("animate__animated animate__zoomIn");
                 }
             }else{
                 $("#photo1").show();
@@ -161,6 +178,8 @@ $(document).ready(function () {
                 $(".proj2").show();
                 $("#photo3").show();
                 $(".proj3").show();
+                $("#photo4").show();
+                $(".proj4").show();
             }
         },
         });

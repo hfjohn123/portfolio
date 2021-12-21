@@ -56,6 +56,9 @@
                     <ul aria-labelledby="navbarDropdown" class="dropdown-menu" id="dropdownmenu">
                         <li><a class="dropdown-item" data-menuanchor="this" href="#this"
                                th:text="#{index.nav4}">This Website</a></li>
+                        <li><a class="dropdown-item" data-menuanchor="kinship" href="#kinship"
+                               th:text="#{index.nav8}">Kinship Ablation Study</a>
+                        </li>
                         <li><a class="dropdown-item" data-menuanchor="rurl" href="#rurl"
                                th:text="#{index.nav5}">Rurl</a>
                         </li>
@@ -260,7 +263,35 @@
     </div>
     <div class="section">
         <div class="container-fluid row align-items-center main">
+            <div class="col-lg-5">
+                <a href="271p.pdf">
+                    <img class="img-fluid photo" id="photo2" src="photo4.png">
+                </a>
+            </div>
             <div class="col-lg-7 proj2">
+                <span th:unless="${#locale.getLanguage().equals('zh')}">
+                <h2>Kinship Classification Ablation Study</h2>
+                    This project is sponsored by Indago LLC.
+                    <br>The data set we used for this project is <a href="https://web.northeastern.edu/smilelab/fiw/index.html">FIW</a>.
+                    <br>In this project, we applied transfer learning on the dataset with
+                    paired images of portraits. We analyze how the imbalanced dataset would affect the result.
+                    The resulting models can accurately classify the kinship between two blood-related persons.
+                    <br>You can click on the image for report. And there is a link toward the dataset and notebook.
+                </span>
+                <span th:if="${#locale.getLanguage().equals('zh')}">
+                <h2>血缘关系分类消融研究</h2>
+                    本项目由Indago LLC赞助。
+                    <br>用到的数据集是<a href="https://web.northeastern.edu/smilelab/fiw/index.html">FIW</a>。
+                    <br>在这个项目中，我们采用了迁移学习。分析了严重不平衡的数据对于模型的影响。最终得到了能够准确判断血亲间关系的模型。
+                    <br>点击图片来下载报告，报告里有数据集和Notebook的链接。
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container-fluid row align-items-center main">
+            <div class="col-lg-7 proj3">
 <span th:unless="${#locale.getLanguage().equals('zh')}">
     <h2>Rurl—— Short Url Generator</h2>
     This website is a short url generator that transforms your long url into a short one so you can share it with others more easily.
@@ -280,7 +311,7 @@
             </div>
             <div class="col-lg-5">
                 <a href="http://hfjohn123.tk:18080">
-                    <img class="img-fluid photo" id="photo2" src="photo2.png">
+                    <img class="img-fluid photo" id="photo3" src="photo2.png">
                 </a>
             </div>
         </div>
@@ -289,13 +320,13 @@
         <div class="container-fluid row align-items-center main">
             <div class="col-lg-5">
                 <a href="project.zip">
-                    <img class="img-fluid photo" id="photo3" src="photo3.png">
+                    <img class="img-fluid photo" id="photo4" src="photo3.png">
                 </a>
             </div>
-            <div class="col-lg-7 proj3">
+            <div class="col-lg-7 proj4">
                 <span th:unless="${#locale.getLanguage().equals('zh')}">
                 <h2>VGG-Like Neural Network Performance Research </h2>
-                    Saying research but this is actually very shallow.
+                    Saying research but this is actually very shallow since this is my first DL project.
                     <br>The data set we used for this project is <a href="https://www.kaggle.com/c/painter-by-numbers">here</a>.
                     <br>Basically we build a solid VGG-like model with Tensorflow,
                     and train and exam it with different training set and test set to see its performance and in the end
@@ -304,11 +335,11 @@
                 </span>
                 <span th:if="${#locale.getLanguage().equals('zh')}">
                 <h2>类VGG神经网络表现研究</h2>
-                    说是研究其实还是挺浅显的。
+                    说是研究其实还是挺浅显的因为这是我第一次接触深度学习。
                     <br>用到的数据集在<a href="https://www.kaggle.com/c/painter-by-numbers">这里</a>。
                     <br>总结的说，我们用TensorFlow搭建了一个类VGG的神经网络模型，
                     然后用不同的训练集和测试集来测试模型的准确率，最后总结并且分析造成结果差异，准确率差别巨大的原因。
-                    <br>点击图片来下载Jupyter NoteBook, 报告和PPT文件.
+                    <br>点击图片来下载Jupyter NoteBook, 报告和PPT文件。
                 </span>
             </div>
         </div>
